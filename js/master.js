@@ -21,7 +21,7 @@ $(document).ready(function () {
   turn = 0;
   align = "x";
   tableArrey = [];
-  endgame=0
+  endgame = 0;
   function whoseTurn() {
     if (turn) {
       align = "x";
@@ -35,10 +35,12 @@ $(document).ready(function () {
 
   //add shape
   $(".xo-main li").click(function () {
-    $(this).text(align);
-    tableArrey[$(this).index()] = align;
-    winner();
-    whoseTurn();
+    if (tableArrey[$(this).index()] == undefined) {
+      $(this).text(align);
+      tableArrey[$(this).index()] = align;
+      winner();
+      whoseTurn();
+    }
   });
 
   //   winner function
@@ -58,7 +60,7 @@ $(document).ready(function () {
         $(".xo-main li")
           .eq(3 * i + 2)
           .addClass("win");
-          endgame++
+        endgame++;
       }
       if (
         tableArrey[i] == tableArrey[i + 3] &&
@@ -72,7 +74,7 @@ $(document).ready(function () {
         $(".xo-main li")
           .eq(i + 6)
           .addClass("win");
-          endgame++
+        endgame++;
       }
       if (
         tableArrey[3 * i] == tableArrey[3 * i + 1] &&
@@ -88,7 +90,7 @@ $(document).ready(function () {
         $(".xo-main li")
           .eq(3 * i + 2)
           .addClass("win");
-          endgame++
+        endgame++;
       }
     }
     if (
@@ -99,7 +101,7 @@ $(document).ready(function () {
       $(".xo-main li").eq(0).addClass("win");
       $(".xo-main li").eq(4).addClass("win");
       $(".xo-main li").eq(8).addClass("win");
-      endgame++
+      endgame++;
     }
     if (
       tableArrey[2] == tableArrey[4] &&
@@ -109,10 +111,10 @@ $(document).ready(function () {
       $(".xo-main li").eq(2).addClass("win");
       $(".xo-main li").eq(4).addClass("win");
       $(".xo-main li").eq(6).addClass("win");
-      endgame++
+      endgame++;
     }
-    if(endgame>0){
-        align=''
+    if (endgame > 0) {
+      align = "";
     }
   }
 });

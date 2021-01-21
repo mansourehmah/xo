@@ -22,7 +22,7 @@ $(document).ready(function () {
   align = "x";
   tableArrey = [];
   endgame = 0;
-  $('.turn span').text(align)
+  $(".turn span").text(align);
   function whoseTurn() {
     if (turn) {
       align = "x";
@@ -31,8 +31,7 @@ $(document).ready(function () {
       align = "o";
       turn++;
     }
-    $('.turn span').text(align)
-    console.log(tableArrey);
+    $(".turn span").text(align);
   }
 
   //add shape
@@ -114,15 +113,23 @@ $(document).ready(function () {
       $(".xo-main li").eq(6).addClass("win");
       endgame++;
     }
-    if (endgame > 0) {
+    if (endgame) {
       $(".winner").addClass("goTop");
       $(".winner span").text(align);
-    }
-    if (endgame == 0) {
+      if (turn) {
+        $(".oIsWinner").text(parseInt($(".oIsWinner").text()) + 1);
+      } else {
+        $(".xIsWinner").text(parseInt($(".xIsWinner").text()) + 1);
+      }
+    } else {
       whoseTurn();
     }
   }
   $(".winner button").click(function () {
-    location.reload();
-  });  
+    $(".winner").removeClass("goTop");
+    $(".xo-main li").text("");
+    $(".xo-main li").removeClass("win");
+    tableArrey = [];
+    endgame = 0;
+  });
 });

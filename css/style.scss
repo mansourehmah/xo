@@ -16,10 +16,10 @@ body {
   align-items: center;
   flex-direction: column;
   overflow: hidden;
-  .turn{
-      margin-bottom: 30px;
-      font-size: 6vw;
-      color: #132a13;
+  .turn {
+    margin-bottom: 30px;
+    font-size: 6vw;
+    color: #132a13;
   }
   .wraper {
     width: 350px;
@@ -88,6 +88,17 @@ body {
       &:focus {
         outline: none;
       }
+    }
+  }
+  #winning {
+    display: flex;
+    justify-content: space-evenly;
+    width: 400px;
+    height: 50px;
+    align-items: center;
+    font-weight: bold;
+    span {
+      color: #5f0f40;
     }
   }
 }

@@ -16,4 +16,24 @@ $(document).ready(function () {
       $("#clock-second").text(newSec);
     }
   }
+
+  //Whose turn is it?
+  turn = 0;
+  align = "x";
+  function whoseTurn() {
+    if (turn) {
+      align = "x";
+      turn--;
+    } else {
+      align = "o";
+      turn++;
+    }
+    console.log(turn);
+  }
+
+  //add shape
+  $(".xo-main li").click(function () {
+    $(this).text(align);
+    whoseTurn();
+  });
 });

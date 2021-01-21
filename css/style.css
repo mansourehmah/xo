@@ -46,6 +46,16 @@
   background-color: #6a994e;
   -webkit-box-shadow: inset 0px 0px 7px #a7c957;
           box-shadow: inset 0px 0px 7px #a7c957;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 70px;
 }
 
 .xo-main .wraper .time {

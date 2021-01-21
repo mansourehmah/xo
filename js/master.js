@@ -20,6 +20,8 @@ $(document).ready(function () {
   //Whose turn is it?
   turn = 0;
   align = "x";
+  tableArrey = [];
+  endgame=0
   function whoseTurn() {
     if (turn) {
       align = "x";
@@ -28,12 +30,89 @@ $(document).ready(function () {
       align = "o";
       turn++;
     }
-    console.log(turn);
+    console.log(tableArrey);
   }
 
   //add shape
   $(".xo-main li").click(function () {
     $(this).text(align);
+    tableArrey[$(this).index()] = align;
+    winner();
     whoseTurn();
   });
+
+  //   winner function
+  function winner() {
+    for (i = 0; i < 3; i++) {
+      if (
+        tableArrey[3 * i] == tableArrey[3 * i + 1] &&
+        tableArrey[3 * i] == tableArrey[3 * i + 2] &&
+        tableArrey[3 * i] != undefined
+      ) {
+        $(".xo-main li")
+          .eq(3 * i)
+          .addClass("win");
+        $(".xo-main li")
+          .eq(3 * i + 1)
+          .addClass("win");
+        $(".xo-main li")
+          .eq(3 * i + 2)
+          .addClass("win");
+          endgame++
+      }
+      if (
+        tableArrey[i] == tableArrey[i + 3] &&
+        tableArrey[i] == tableArrey[i + 6] &&
+        tableArrey[i] != undefined
+      ) {
+        $(".xo-main li").eq(i).addClass("win");
+        $(".xo-main li")
+          .eq(i + 3)
+          .addClass("win");
+        $(".xo-main li")
+          .eq(i + 6)
+          .addClass("win");
+          endgame++
+      }
+      if (
+        tableArrey[3 * i] == tableArrey[3 * i + 1] &&
+        tableArrey[3 * i] == tableArrey[3 * i + 2] &&
+        tableArrey[3 * i] != undefined
+      ) {
+        $(".xo-main li")
+          .eq(3 * i)
+          .addClass("win");
+        $(".xo-main li")
+          .eq(3 * i + 1)
+          .addClass("win");
+        $(".xo-main li")
+          .eq(3 * i + 2)
+          .addClass("win");
+          endgame++
+      }
+    }
+    if (
+      tableArrey[0] == tableArrey[4] &&
+      tableArrey[0] == tableArrey[8] &&
+      tableArrey[0] != undefined
+    ) {
+      $(".xo-main li").eq(0).addClass("win");
+      $(".xo-main li").eq(4).addClass("win");
+      $(".xo-main li").eq(8).addClass("win");
+      endgame++
+    }
+    if (
+      tableArrey[2] == tableArrey[4] &&
+      tableArrey[2] == tableArrey[6] &&
+      tableArrey[2] != undefined
+    ) {
+      $(".xo-main li").eq(2).addClass("win");
+      $(".xo-main li").eq(4).addClass("win");
+      $(".xo-main li").eq(6).addClass("win");
+      endgame++
+    }
+    if(endgame>0){
+        align=''
+    }
+  }
 });

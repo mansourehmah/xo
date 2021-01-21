@@ -23,7 +23,17 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
+}
+
+.xo-main .turn {
+  margin-bottom: 30px;
+  font-size: 6vw;
+  color: #132a13;
 }
 
 .xo-main .wraper {

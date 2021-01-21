@@ -22,6 +22,7 @@ $(document).ready(function () {
   align = "x";
   tableArrey = [];
   endgame = 0;
+  $('.turn span').text(align)
   function whoseTurn() {
     if (turn) {
       align = "x";
@@ -30,6 +31,7 @@ $(document).ready(function () {
       align = "o";
       turn++;
     }
+    $('.turn span').text(align)
     console.log(tableArrey);
   }
 
@@ -122,5 +124,5 @@ $(document).ready(function () {
   }
   $(".winner button").click(function () {
     location.reload();
-  });
+  });  
 });

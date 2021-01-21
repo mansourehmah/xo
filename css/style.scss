@@ -14,7 +14,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   overflow: hidden;
+  .turn{
+      margin-bottom: 30px;
+      font-size: 6vw;
+      color: #132a13;
+  }
   .wraper {
     width: 350px;
     height: 400px;

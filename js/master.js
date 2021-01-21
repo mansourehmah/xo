@@ -39,7 +39,6 @@ $(document).ready(function () {
       $(this).text(align);
       tableArrey[$(this).index()] = align;
       winner();
-      whoseTurn();
     }
   });
 
@@ -114,7 +113,14 @@ $(document).ready(function () {
       endgame++;
     }
     if (endgame > 0) {
-      align = "";
+      $(".winner").addClass("goTop");
+      $(".winner span").text(align);
+    }
+    if (endgame == 0) {
+      whoseTurn();
     }
   }
+  $(".winner button").click(function () {
+    location.reload();
+  });
 });

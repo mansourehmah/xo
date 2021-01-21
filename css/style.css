@@ -6,10 +6,13 @@
   font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
+body {
+  overflow: hidden;
+}
+
 .xo-main {
   width: 100%;
   height: 100vh;
-  overflow: hidden;
   background-color: #a6c48a;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -20,6 +23,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  overflow: hidden;
 }
 
 .xo-main .wraper {
@@ -76,6 +80,59 @@
 
 .xo-main .wraper .time span {
   color: #132a13;
+}
+
+.xo-main .winner {
+  background-color: #735d78;
+  color: #f7d1cd;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-size: 6vw;
+  top: 110%;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.xo-main .winner button {
+  background-color: #d1b3c4;
+  width: 200px;
+  height: 70px;
+  border-radius: 35px;
+  text-transform: uppercase;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  font-size: 22px;
+  color: #5f0f40;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.xo-main .winner button:hover {
+  background-color: #e8c2ca;
+}
+
+.xo-main .winner button:focus {
+  outline: none;
+}
+
+.goTop {
+  top: 0 !important;
 }
 
 .win {

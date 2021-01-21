@@ -104,8 +104,8 @@ body {
           flex-direction: column;
   font-size: 6vw;
   top: 110%;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .xo-main .winner button {
@@ -119,8 +119,8 @@ body {
   cursor: pointer;
   font-size: 22px;
   color: #5f0f40;
-  -webkit-transition: .4s;
-  transition: .4s;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
 }
 
 .xo-main .winner button:hover {

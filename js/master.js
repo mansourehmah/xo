@@ -122,14 +122,27 @@ $(document).ready(function () {
         $(".xIsWinner").text(parseInt($(".xIsWinner").text()) + 1);
       }
     } else {
+      repeat = 0;
+      for (i = 0; i < 9; i++) {
+        if ($(".xo-main li").eq(i).text() != "") {
+          repeat++;
+        }
+      }
+      if (repeat == 9) {
+        repeatGame();
+      }
       whoseTurn();
     }
   }
-  $(".winner button").click(function () {
-    $(".winner").removeClass("goTop");
+
+  function repeatGame() {
     $(".xo-main li").text("");
-    $(".xo-main li").removeClass("win");
     tableArrey = [];
     endgame = 0;
+  }
+  $(".winner button").click(function () {
+    $(".winner").removeClass("goTop");
+    $(".xo-main li").removeClass("win");
+    repeatGame();
   });
 });
